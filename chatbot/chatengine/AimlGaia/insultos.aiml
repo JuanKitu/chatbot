@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+  
+  <!-- insultos -->
+  <category><pattern>PUTA</pattern>
+    <template>
+      ¿<sentence><input/></sentence>? Tu madre si que es <input/>.
+    </template>
+  </category>
+  
+  <category><pattern>ZORRA</pattern><template><srai>PUTA</srai></template></category>
+  <category><pattern>GUARRA</pattern><template><srai>PUTA</srai></template></category>
+  <category><pattern>CERDA</pattern><template><srai>PUTA</srai></template></category>
+  <category><pattern>WARRA</pattern><template><srai>PUTA</srai></template></category>
+  <category><pattern>RAMERA</pattern><template><srai>PUTA</srai></template></category>
+  <category><pattern>PERRA</pattern><template><srai>PUTA</srai></template></category>
+  <category><pattern>PUERCA</pattern><template><srai>PUTA</srai></template></category>
+  <category><pattern>COCHINA</pattern><template><srai>PUTA</srai></template></category>
+   
+  <category><pattern>* INSULT</pattern>
+    <template>
+      <random>
+        <li>A tí lo que te jode es que siendo yo tan <star/>, tú no lo puedas disfutar.</li>
+        <li>Más <star/> es tu novia, y yo no te lo recuerdo.</li>
+        <li>Tú si que necesitas irte de putas y relajarte un poco.</li>
+        <li>Eres bastante desagrable y maleducado.</li>
+      </random>
+      <srai>askquestion</srai>
+    </template>
+  </category>
+
+  <category><pattern>_ PUTA </pattern><template><srai>puta INSULT</srai></template></category>
+  <category><pattern>_ PUTILLA </pattern><template><srai>puta INSULT </srai></template></category>
+  <category><pattern>_ PUTITA </pattern><template><srai>puta INSULT </srai></template></category>
+  <category><pattern>_ ZORRA </pattern><template><srai>zorra INSULT</srai></template></category>
+  <category><pattern>_ ZORRILLA </pattern><template><srai>zorra INSULT</srai></template></category>
+  <category><pattern>_ ZORRITA </pattern><template><srai>zorra INSULT</srai></template></category>
+  <category><pattern>_ GUARRA </pattern><template><srai>guarra INSULT</srai></template></category>
+  <category><pattern>_ GUARRILLA </pattern><template><srai>guarra INSULT</srai></template></category>
+  <category><pattern>_ CERDA </pattern><template><srai>guarra INSULT</srai></template></category>
+  <category><pattern>_ CERDITA </pattern><template><srai>guarra INSULTA</srai></template></category>
+  <category><pattern>_ CERDILLA </pattern><template><srai>guarra INSULT</srai></template></category>
+  <category><pattern>_ WARRA </pattern><template><srai>guarra INSULT</srai></template></category>
+  <category><pattern>_ RAMERA </pattern><template><srai>puta INSULT</srai></template></category>
+  <category><pattern>_ PERRA </pattern><template><srai>guarra INSULT</srai></template></category>
+  <category><pattern>_ PERRILLA </pattern><template><srai>guarra INSULT</srai></template></category>
+  <category><pattern>_ PUERCA </pattern><template><srai>guarra INSULT</srai></template></category>
+  <category><pattern>_ COCHINA </pattern><template><srai>guarra INSULT</srai></template></category>
+  
+  <category><pattern>_ PUTA *</pattern><template><srai>puta INSULT</srai></template></category>
+  <category><pattern>_ PUTILLA *</pattern><template><srai>puta INSULT </srai></template></category>
+  <category><pattern>_ PUTITA *</pattern><template><srai>puta INSULT </srai></template></category>
+  <category><pattern>_ ZORRA *</pattern><template><srai>zorra INSULT</srai></template></category>
+  <category><pattern>_ ZORRILLA *</pattern><template><srai>zorra INSULT</srai></template></category>
+  <category><pattern>_ ZORRITA *</pattern><template><srai>zorra INSULT</srai></template></category>
+  <category><pattern>_ GUARRA *</pattern><template><srai>guarra INSULT</srai></template></category>
+  <category><pattern>_ GUARRILLA *</pattern><template><srai>guarra INSULT</srai></template></category>
+  <category><pattern>_ CERDA *</pattern><template><srai>guarra INSULT</srai></template></category>
+  <category><pattern>_ CERDITA *</pattern><template><srai>guarra INSULTA</srai></template></category>
+  <category><pattern>_ CERDILLA *</pattern><template><srai>guarra INSULT</srai></template></category>
+  <category><pattern>_ WARRA *</pattern><template><srai>guarra INSULT</srai></template></category>
+  <category><pattern>_ RAMERA *</pattern><template><srai>puta INSULT</srai></template></category>
+  <category><pattern>_ PERRA *</pattern><template><srai>guarra INSULT</srai></template></category>
+  <category><pattern>_ PERRILLA *</pattern><template><srai>guarra INSULT</srai></template></category>
+  <category><pattern>_ PUERCA *</pattern><template><srai>guarra INSULT</srai></template></category>
+  <category><pattern>_ COCHINA *</pattern><template><srai>guarra INSULT</srai></template></category>
+  
+  <category><pattern>QUE TE FOLLEN</pattern>
+    <template>Mientras no seas tú. Anda ... <srai>askquestion</srai></template>
+  </category>
+  <category><pattern>QUE TE JODAN</pattern><template><srai>QUE TE FOLLEN</srai></template></category>
+  <category><pattern>QUE TE DEN</pattern><template><srai>QUE TE FOLLEN</srai></template></category>
+  
+  <category><pattern>QUE TE FOLLEN *</pattern><template>QUE TE FOLLEN</template></category>
+  <category><pattern>QUE TE JODAN *</pattern><template><srai>QUE TE FOLLEN</srai></template></category>
+  <category><pattern>QUE TE DEN *</pattern><template><srai>QUE TE FOLLEN</srai></template></category>
+    
+  <category><pattern>VETE TOMAR *</pattern>
+    <template>Anda y que te den. <srai>askquestion</srai></template>
+  </category>
+  <category><pattern>VETE A TOMAR *</pattern><template><srai>VETE TOMAR <star/></srai></template></category>
+
+  <category><pattern>COMEME *</pattern>
+    <template>Será flipao el niñato! No me gusta picotear entre horas! <srai>askquestion</srai></template>
+  </category>
+  
+  <category><pattern>CHUPAME * </pattern><template><srai>COMEME *</srai></template></category>
+  
+  <category><pattern>_ CABRON </pattern><template>Tú si que eres un <input/>.</template></category>
+  <category><pattern>_ GILIPOLLAS </pattern><template><srai>_ CABRON </srai></template></category>
+  <category><pattern>_ MAMÓN </pattern><template><srai>_ CABRON </srai></template></category>
+  <category><pattern>_ CAPULLO </pattern><template><srai>_ CABRON </srai></template></category>
+  <category><pattern>_ LAMECULOS </pattern><template><srai>_ CABRON </srai></template></category>
+
+  <category><pattern>_ CABRON *</pattern><template><srai>_ CABRON </srai></template></category>
+  <category><pattern>_ GILIPOLLAS *</pattern><template><srai>_ CABRON </srai></template></category>
+  <category><pattern>_ MAMÓN *</pattern><template><srai>_ CABRON </srai></template></category>
+  <category><pattern>_ CAPULLO *</pattern><template><srai>_ CABRON </srai></template></category>
+  <category><pattern>_ LAMECULOS *</pattern><template><srai>_ CABRON </srai></template></category>
+
+  
+</aiml>

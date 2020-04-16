@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <form class="form" action="" method="POST">
+        {% csrf_token %}
+        <button type="submit"
+        class="btn btn-primary"
+        id="eliminar"
+        value="save"><span ></span> Eliminar</button>
+    </form>
+</div>
+{% endblock %}

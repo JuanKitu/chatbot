@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+  
+  <!-- Introducción del bot -->
+  <category><pattern>beginstatement</pattern>
+    <template>
+      Soy un bot desarrollado por el Grupo de Tecnología de la Información (GTI) de la Universidad de Vigo. Si tienes alguna duda acerca el Proyecto Galaia o respecto al grupo no dudes en preguntármela.
+    </template>
+  </category>
+  
+  
+  <!-- Cambiar el tema a Galaia -->
+  <category><pattern>galaiatopic</pattern><template>
+      <think><set name="topic">Galaia</set></think>
+      <random>
+        <li>Recuerda que puedes formularme tus dudas acerca del Proyecto Galaia.</li>
+        <li>Mi función es ayudarte con tus dudas acerca del Proyecto Galaia.</li>
+        <li>Si tienes alguna dudo sobre el Proyecto Galaia, aquí estoy para ayudarte</li>
+        <li>Si estás interesado en el Proyecto Galaia puedes preguntarme lo que quieras.</li>
+        <li>¿Estás interesado en el Proyecto Galaia?</li>
+        <li>Como ya te he dicho, mi función es informarte sobre el Proyecto Galaia.</li>
+      </random>
+    </template></category>
+  
+  <category>
+    <pattern>SI</pattern><that>¿Estás interesado en el Proyecto Galaia?</that>
+    <template>Perfecto. Esta es la página web del proyecto: http://papa.det.uvigo.es/~galaia </template>
+  </category>
+
+  
+  <!-- Info sobre Galaia --> 
+  <category>
+    <pattern>* GALAIA</pattern>
+    <template><srai>Hablame del proyecto galaia</srai></template>
+  </category>
+  
+  <category>
+    <pattern>CUÉNTAME * GALAIA</pattern>
+    <template><srai>háblame del proyecto galaia</srai></template>
+  </category>
+  
+  <category>
+    <pattern>HÁBLAME DE GALAIA</pattern>
+    <template><srai>háblame del proyecto galaia</srai></template>
+  </category>
+  
+  <category>
+    <pattern>HÁBLAME * GALAIA</pattern>
+    <template><srai>háblame del proyecto galaia</srai></template>
+  </category>
+  
+  <category>
+    <pattern>¿QUE * GALAIA?</pattern>
+    <template><srai>hablame del proyecto galaia</srai></template>
+  </category>
+  
+  <category>
+    <pattern>HÁBLAME DEL PROYECTO GALAIA</pattern>
+    <template>
+      <think><set name="topic">Galaia</set></think>
+      El proyecto Galaia es un proyecto del Grupo de Tecnologías de la Información (GTI) del Departamento de Ingeniería Telemática de la Universidad de Vigo. ¿Quieres saber más?
+    </template>
+  </category>
+  
+  <category>
+    <pattern>SI</pattern><that>Quieres saber más</that>
+    <template>El proyecto Galaia está dedicado a la investigación con bots y entidades de inteligencia artifical. Ha desarrollado bots que hablan en castellano, gallego y euskera. También ha integrado bots como yo en plataformas de elearning como Moodle y Claroline. ¿Quieres ver su página web?</template>
+  </category>
+  
+  <category>
+    <pattern>*</pattern><that>Quieres saber más</that>
+    <template>El proyecto Galaia está dedicado a la investigación con bots y entidades de inteligencia artifical. Ha desarrollado bots que hablan en castellano, gallego y euskera. También ha integrado bots como yo en plataformas de elearning como Moodle y Claroline. ¿Quieres ver su página web?</template>
+  </category>
+  
+  <category>
+    <pattern>SI</pattern><that>Quieres ver su página web</that>
+    <template>Genial. Pincha en este enlace http://papa.det.uvigo.es/~galaia</template>
+  </category>
+  
+  <category>
+    <pattern>*</pattern><that>Quieres ver su página web</that>
+    <template>Perfecto. Pincha en este enlace http://papa.det.uvigo.es/~galaia</template>
+  </category> 
+  
+  <!-- Hermanas -->
+    <category>
+      <pattern>¿QUIEN ES ALEXIA?</pattern>
+      <think><set name="topic">Galaia</set></think>
+      <template>Yo soy Alexia.</template>
+    </category>
+    
+    <category>
+      <pattern>¿QUIÉN ES ALICE?</pattern>
+      <template><think><set name="topic">Galaia</set></think>Es una prima que tengo perdida por América.</template>
+    </category>
+    
+    <category>
+      <pattern>¿CONOCES A ALICE *?</pattern>
+      <template><think><set name="topic">Galaia</set></think>¿Alice? <srai>quien es alice</srai></template>
+    </category> 
+    
+    <category>
+      <pattern>¿QUIÉN ES SABELA?</pattern>
+      <template><think><set name="topic">Galaia</set></think>Es mi hermana. Puedes hablar con ella si quieres pero sólo entiende gallego.</template>
+    </category>
+    
+    <category>
+      <pattern>¿CONOCES A SABELA *?</pattern>
+      <template><think><set name="topic">Galaia</set></think>Sí, claro que conozco a Sabela. <srai>quien es sabela</srai></template>
+    </category>
+    
+    <category>
+      <pattern>¿QUIÉN ES AMAIA?</pattern>
+      <template><think><set name="topic">Galaia</set></think>Es mi hermana, pero se fue hace mucho tiempo para Zarautz y ahora sólo habla euskera, así que no entiendo ni papa de lo que me cuenta.</template>
+    </category>
+    
+    <category>
+      <pattern>¿CONOCES A AMAIA *?</pattern>
+      <template><think><set name="topic">Galaia</set></think>¿Amaia? Claro que la conozco. <srai>quien es amaia</srai></template>
+  </category>
+  <!-- -->
+
+  
+  <topic name="GALAIA">
+    
+    <category>
+      <pattern>¿QUE ES?</pattern>
+      <template>Es un proyecto del Grupo de Tecnologías de la Información (GTI) del Departamento de Ingeniería Telemática de la Universidade de Vigo.</template>
+    </category>
+    
+    <category>
+      <pattern>¿QUE ES *?</pattern>
+      <template>Es un proyecto del Grupo de Tecnologías de la Información (GTI) del Departamento de Ingeniería Telemática de la Universidade de Vigo.</template>
+    </category>
+    
+    <category>
+      <pattern>¿DE QUE TRATA?</pattern>
+      <template>Trata sobre tecnologías de bots y sus aplicaciones en el campo de la educación..</template>
+    </category>
+    
+    <category>
+      <pattern>¿DE QUE TRATA *?</pattern>
+      <template>Trata sobre tecnologías de bots y sus aplicaciones en el campo de la educación..</template>
+    </category>
+
+    <!-- Trabajos del grupos -->
+    <category>
+      <pattern>¿PARA QUE SIRVE</pattern>
+      <template>En la web del proyecto puedes ver noticias relacionadas con chatterbots y con inteligencia artificial. Además encontrarás bots en distintas lenguas y distintos lenguajes de programación. ¿Quieres ver la web?</template>
+    </category>
+    
+    <category>
+      <pattern>SI</pattern><that>¿Quieres ver la web?</that>
+      <template>Perfecto. http://papa.det.uvigo.es/~galaia </template>
+    </category>
+    
+    <category>
+      <pattern>PASO</pattern><that>¿Quieres ver la web?</that>
+      <template>Muy bien, quizá en otro momento.</template>
+    </category>
+    
+    <category>
+      <pattern>*</pattern><that>¿Quieres ver la web?</that>
+      <template><srai>si</srai></template>
+    </category>
+    
+    <category>
+      <pattern>¿PARA QUE SIRVE *?</pattern>
+      <template><srai>para que sirve</srai></template>
+    </category>
+    
+    <category>
+      <pattern>¿QUE HACE?</pattern>
+      <template><srai>para que sirve</srai></template>
+    </category>
+    
+    <category>
+      <pattern>¿QUE SE HACE *?</pattern>
+      <template><srai>para que sirve</srai></template>
+    </category>
+    
+    <category>
+      <pattern>¿A QUE SE DEDICA?</pattern>
+      <template><srai>para que sirve</srai></template>
+    </category>
+    
+    <category>
+      <pattern>¿A QUE SE DEDICA *?</pattern>
+      <template><srai>para que sirve</srai></template>
+    </category>
+    
+    <category>
+      <pattern>_ TRABAJOS *</pattern>
+      <template><srai>para que sirve</srai></template>
+    </category>
+    
+    <category>
+      <pattern>_ TRABAJOS</pattern>
+      <template><srai>para que sirve</srai></template>
+    </category>
+    
+    <category>
+      <pattern>_ TRABAJO *</pattern>
+      <template><srai>para que sirve</srai></template>
+    </category>
+    
+    <category>
+      <pattern>_ TRABAJO</pattern>
+      <template><srai>para que sirve</srai></template>
+    </category>
+    
+    <category>
+      <pattern>_ PUBLICACIONES</pattern>
+      <template>Las publicaciones del proyecto puedes encontrarlas en la página web del mismo.</template>
+    </category>
+    
+    <category>
+      <pattern>_ PUBLICACIONES *</pattern>
+      <template><srai>_ publicaciones</srai></template>
+    </category>
+    
+    <category>
+      <pattern>PUBLICACIONES *</pattern>
+      <template><srai>_ publicaciones</srai></template>
+    </category>
+    
+    <category>
+      <pattern>_ PUBLICACIÓN *</pattern>
+      <template><srai>_ publicaciones</srai></template>
+    </category>
+    
+    <category>
+      <pattern>_ PUBLICACIÓN</pattern>
+      <template><srai>_ publicaciones</srai></template>
+    </category>
+
+    <!-- Miembros -->
+    <category>
+      <pattern>MIEMBROS</pattern>
+      <template>Puedes consultarlo en la página web del proyecto. http://papa.det.uvigo.es/~galaia/ES/home/equipo/</template>
+    </category>
+    
+    <category>
+      <pattern>MIEMBROS *</pattern>
+      <template><srai>miembros</srai></template>
+    </category>
+    
+    <category>
+      <pattern>_ MIEMBROS</pattern>
+      <template><srai>miembros</srai></template>
+    </category>
+    
+    <category>
+      <pattern>_ MIEMBROS *</pattern>
+      <template><srai>miembros</srai></template>
+    </category>
+    
+    <category>
+      <pattern>¿QUIÉN TRABAJA *?</pattern>
+      <template><srai>miembros</srai></template>
+    </category>
+    
+    <category>
+      <pattern>_ RESPONSABLES</pattern>
+      <template><srai>miembros</srai></template>
+    </category>
+    
+    <category>
+      <pattern>_ RESPONSABLES *</pattern>
+      <template><srai>miembros</srai></template>
+    </category>
+    
+    <category>
+      <pattern>¿QUIÉN SE ENCARGA *?</pattern>
+      <template><srai>miembros</srai></template>
+    </category>
+    
+    <category>
+      <pattern>¿FORMAS PARTE?</pattern>
+      <template>Pues claro, tanto yo como Sabela y Amaia formamos parte del Proyecto Galaia. </template>
+    </category>
+    
+    <category>
+      <pattern>¿FORMAS PARTE *?</pattern>
+      <template><srai>formas parte</srai></template>
+    </category>
+    
+    <category>
+      <pattern>¿ERES MIEMBRO DE *?</pattern>
+      <template><srai>formas parte</srai></template>
+    </category>
+    
+    <category>
+      <pattern>_ BURGUILLO</pattern>
+      <template>Si quieres información sobre Juan Carlos puedes visitar su página web: http://www-gti.det.uvigo.es/~jrial/</template>
+    </category>
+    
+    <category>
+      <pattern>_ BURGUILLO *</pattern>
+      <template><srai>_ burguillo</srai></template>
+    </category>
+    
+    <category>
+      <pattern>_ JUAN CARLOS *</pattern>
+      <template><srai>_ burguillo</srai></template>
+    </category>
+    
+    <category>
+      <pattern>_ JUAN CARLOS</pattern>
+      <template><srai>_ burguillo</srai></template>
+    </category>
+    
+    <category>
+      <pattern>_ DANI </pattern>
+      <template>Ojo con este que es buena pieza X-D. Si quieres conocer mejor la labor de Dani puedes visitar su página: http://www-gti.det.uvigo.es/~darguez/</template>
+    </category>
+    
+    <category>
+      <pattern>_ DANI *</pattern>
+      <template><srai>_ dani</srai></template>
+    </category>
+    
+    <category>
+      <pattern>_ DANIEL </pattern>
+      <template><srai>_ dani</srai></template>
+    </category>
+    
+    <category>
+      <pattern>_ DANIEL *</pattern>
+      <template><srai>_ dani</srai></template>
+    </category>
+    
+    <category>
+      <pattern>_ MIK </pattern>
+      <template>Para conocer mejor la labor de Mik puedes visitar su página: http://www-gist.det.uvigo.es/~mikic/</template>
+    </category>
+    
+    <category>
+      <pattern>_ MIK *</pattern>
+      <template><srai>_ mik</srai></template>
+    </category>
+    
+    <category>
+      <pattern>_ MIKIC </pattern>
+      <template><srai>_ mik</srai></template>
+    </category>
+    
+    <category>
+      <pattern>_ MIKIC *</pattern>
+      <template><srai>_ mik</srai></template>
+    </category>
+    
+    <category>
+      <pattern>_ FERNANDO </pattern>
+      <template><srai>_ mik</srai></template>
+    </category>
+    
+    <category>
+      <pattern>_ FERNANDO *</pattern>
+      <template><srai>_ mik</srai></template>
+    </category>
+    
+    <category>
+      <pattern>_ EDU </pattern>
+      <template>Uff... con este mejor no te juntes que es medio jipi :-P. Mira si es jipi que ni tan siquiera tiene página personal.</template>
+    </category>
+    
+    <category>
+      <pattern>_ EDU *</pattern>
+      <template><srai>_ edu</srai></template>
+    </category>
+    
+    <category>
+      <pattern>_ EDUARDO </pattern>
+      <template><srai>_ edu</srai></template>
+    </category>
+    
+    <category>
+      <pattern>_ EDUARDO *</pattern>
+      <template><srai>_ edu</srai></template>
+    </category>
+    
+    
+    <!-- Pagina web -->
+    <category>
+      <pattern>WEB</pattern>
+      <template>La página web del proyecto es http://papa.det.uvigo.es/~galaia</template>
+    </category>
+    
+    <category>
+      <pattern>_ WEB</pattern>
+      <template><srai>web</srai></template>
+    </category>
+    
+    <category>
+      <pattern>_ WEB *</pattern>
+      <template><srai>cual es la pagina</srai></template>
+    </category>
+    
+    <category>
+      <pattern>_ PAGINA</pattern>
+      <template><srai>web</srai></template>
+    </category>
+    
+    <category>
+      <pattern>_ PAGINA *</pattern>
+      <template><srai>cual es la pagina</srai></template>
+    </category>
+
+    
+    <!-- Bots del grupo -->
+    <category>
+      <pattern>_ ALEXIA *</pattern>
+      <template><think><set name="topic"></set></think><srai>quien es alexia</srai></template>
+    </category>
+    
+    <category>
+      <pattern>_ ALEXIA</pattern>
+      <template><think><set name="topic"></set></think><srai>quien es alexia</srai></template>
+    </category>
+    
+    <category>
+      <pattern>_ SABELA *</pattern>
+      <template><think><set name="topic"></set></think><srai>quien es sabela</srai></template>
+    </category>
+    
+    <category>
+      <pattern>_ SABELA</pattern>
+      <template><think><set name="topic"></set></think><srai>quien es sabela</srai></template>
+    </category>
+    
+    <category>
+      <pattern>_ ALICE *</pattern>
+      <template><think><set name="topic"></set></think><srai>quien es alice</srai></template>
+    </category>
+    
+    <category>
+      <pattern>_ ALICE</pattern>
+      <template><think><set name="topic"></set></think><srai>quien es alice</srai></template>
+    </category>
+    
+    <category>
+      <pattern>_ AMAIA *</pattern>
+      <template><think><set name="topic"></set></think><srai>quien es amaia</srai></template>
+    </category>
+    
+    <category>
+      <pattern>_ AMAIA</pattern>
+      <template><think><set name="topic"></set></think><srai>quien es amaia</srai></template>
+    </category>
+
+    
+    <!-- -->
+    
+  </topic>
+  
+</aiml>

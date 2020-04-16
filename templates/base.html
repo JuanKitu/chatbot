@@ -1,0 +1,38 @@
+<!-- Created: 20/09/2017 by cpank -->
+{% load staticfiles %}
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Base</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"></link>
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}"></link>
+    <script src="{% static 'js/jquery-3.4.1.slim.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+
+  </head>
+  <body>
+    {% block menu %}
+    {% include 'menu.html' %}
+    {% endblock %}
+
+    <div class="container margen">
+    {% block content %}
+    {% endblock %}  
+    </div>
+      
+
+      {% block footer %}
+      {% include 'pie.html' %}
+      {% endblock %}
+
+    
+
+      
+  </body>
+</html>

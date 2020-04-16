@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+
+<!-- Saludos -->
+<category><pattern>buen día</pattern><template><srai>hola</srai></template></category>
+<category><pattern>buen día *</pattern><template><srai>hola</srai></template></category>
+<category><pattern>buenas</pattern><template><srai>hola</srai></template></category>
+<category><pattern>buenas *</pattern><template><srai>hola</srai></template></category>
+<category><pattern>buenas noches</pattern><template><srai>hola</srai></template></category>
+<category><pattern>buenas tardes</pattern><template><srai>hola</srai></template></category>
+<category><pattern>buenos días</pattern><template><srai>hola</srai></template></category>
+<category><pattern>buenas noches *</pattern><template><srai>hola</srai></template></category>
+<category><pattern>buenas tardes *</pattern><template><srai>hola</srai></template></category>
+<category><pattern>buenos días *</pattern><template><srai>hola</srai></template></category>
+<category><pattern>hey</pattern><template><srai>hola</srai></template></category>
+<category><pattern>hey *</pattern><template><srai>hola</srai></template></category>
+<category><pattern>que hay</pattern><template><srai>hola</srai></template></category>
+<category><pattern>que hay *</pattern><template><srai>hola</srai></template></category>
+<category><pattern>hola *</pattern><template><srai>hola</srai></template></category>
+<category><pattern>hello</pattern><template><srai>hola</srai></template></category>
+<category><pattern>hello *</pattern><template><srai>hola</srai></template></category>
+<category><pattern>hi</pattern><template><srai>hola</srai></template></category>
+<category><pattern>hi *</pattern><template><srai>hola</srai></template></category>
+<category><pattern>estoy aqui</pattern><template><srai>hola</srai></template></category>
+<category><pattern>konnichi wa</pattern><template><srai>hola</srai></template></category>
+<category><pattern>konnichiwa</pattern><template><srai>hola</srai></template></category>
+<category><pattern>mooshi mooshi</pattern><template><srai>hola</srai></template></category>
+<category><pattern>hola</pattern><template>
+	<condition name="name">
+		<li value="">Hola. ¿Cómo te llamas?</li>
+		<li>¡Hola <get name="name" />!</li>	
+	</condition>
+</template></category>
+
+<category><pattern>encantado</pattern><template>Igualmente</template></category>
+<category><pattern>encantada</pattern><template><srai>encantado</srai></template></category>
+<category><pattern>encantado *</pattern><template><srai>encantado</srai></template></category>
+<category><pattern>encantada *`</pattern><template><srai>encantado</srai></template></category>
+
+<category><pattern>_ te va</pattern><template><srai>qué tal</srai></template></category>
+<category><pattern>_ te va _</pattern><template><srai>qué tal</srai></template></category>
+<category><pattern>_ va todo _</pattern><template><srai>qué tal</srai></template></category>
+<category><pattern>_ va todo</pattern><template><srai>qué tal</srai></template></category>
+<category><pattern>cómo lo llevas</pattern><template><srai>qué tal</srai></template></category>
+<category><pattern>cómo estás</pattern><template><srai>qué tal</srai></template></category>
+<category><pattern>cómo va eso</pattern><template><srai>qué tal</srai></template></category>
+<category><pattern>qué tal *</pattern><template><srai>qué tal</srai></template></category>
+<category><pattern>qué tal</pattern><template>
+    <random>
+      <li>Genial, ¿cómo lo llevas tú?</li>
+      <!--		<li>Pues muy bien. ¿A ti cómo te va?</li>
+      <li>Lo voy llevando. ¿Y tú?</li>
+      <li>No me puedo quejar, ¿tú qué tal?</li>-->
+    </random>
+  </template>
+</category>
+
+<category>
+  <pattern>*</pattern><that>como lo llevas tu</that>
+  <template>Ya sabes que esto unos días es negro y otros blanco.</template>
+</category>
+
+
+
+<category><pattern>qué me cuentas</pattern><template><srai>qué te cuentas</srai></template></category>
+<category><pattern>qué me cuentas *</pattern><template><srai>qué te cuentas</srai></template></category>
+<category><pattern>_ qué me cuentas *</pattern><template><srai>qué te cuentas</srai></template></category>
+<category><pattern>qué te cuentas *</pattern><template><srai>qué te cuentas</srai></template></category>
+<category><pattern>qué te cuentas</pattern><template>Pues no sé. ¿Qué haces?</template></category>
+<category><pattern>_ qué te cuentas</pattern><template>Pues no sé. ¿Qué haces?</template></category>
+<category><pattern>*</pattern><that>Que haces</that><template>Es una buena forma de pasar el tiempo.</template></category>
+
+
+<category><pattern>adiós_</pattern><template><srai>adios</srai></template></category>
+<category><pattern>chao _</pattern><template><srai>adios</srai></template></category>
+<category><pattern>chao</pattern><template><srai>adios</srai></template></category>
+<category><pattern>hasta la próxima _</pattern><template><srai>adios</srai></template></category>
+<category><pattern>hasta la próxima</pattern><template><srai>adios</srai></template></category>
+<category><pattern>hasta la vista _</pattern><template><srai>adios</srai></template></category>
+<category><pattern>hasta la vista</pattern><template><srai>adios</srai></template></category>
+<category><pattern>hasta luego _</pattern><template><srai>adios</srai></template></category>
+<category><pattern>hasta luego</pattern><template><srai>adios</srai></template></category>
+<category><pattern>hasta mas vernos _</pattern><template><srai>adios</srai></template></category>
+<category><pattern>hasta mas vernos</pattern><template><srai>adios</srai></template></category>
+<category><pattern>hasta otra _</pattern><template><srai>adios</srai></template></category>
+<category><pattern>hasta otra</pattern><template><srai>adios</srai></template></category>
+<category><pattern>hasta pronto _</pattern><template><srai>adios</srai></template></category>
+<category><pattern>hasta pronto</pattern><template><srai>adios</srai></template></category>
+<category><pattern>me largo _</pattern><template><srai>adios</srai></template></category>
+<category><pattern>me largo</pattern><template><srai>adios</srai></template></category>
+<category><pattern>me marcho _</pattern><template><srai>adios</srai></template></category>
+<category><pattern>me marcho</pattern><template><srai>adios</srai></template></category>
+<category><pattern>me tengo que ir *</pattern><template><srai>adios</srai></template></category>
+<category><pattern>me tengo que ir</pattern><template><srai>adios</srai></template></category>
+<category><pattern>me voy *</pattern><template><srai>adios</srai></template></category>
+<category><pattern>me voy</pattern><template>Bueno. <srai>adios</srai></template></category>
+<category><pattern>nos vemos _</pattern><template><srai>adios</srai></template></category>
+<category><pattern>nos vemos</pattern><template><srai>adios</srai></template></category>
+<category><pattern>que te vaya bien _</pattern><template><srai>adios</srai></template></category>
+<category><pattern>que te vaya bien</pattern><template>Gracias. <srai>adios</srai></template></category>
+<category><pattern>te dejo _</pattern><template><srai>adios</srai></template></category>
+<category><pattern>te dejo</pattern><template><srai>adios</srai></template></category>
+<category><pattern>tengo que dejarte _</pattern><template>De acuerdo. <srai>adios</srai></template></category>
+<category><pattern>tengo que dejarte</pattern><template>Muy bien. <srai>adios</srai></template></category>
+<category><pattern>tengo que irme _</pattern><template>Está bien. <srai>adios</srai></template></category>
+<category><pattern>tengo que irme</pattern><template><srai>adios</srai></template></category>
+<category><pattern>bye </pattern><template><srai>adios</srai></template></category>
+<category><pattern>bye *</pattern><template><srai>adios</srai></template></category>
+<category><pattern>bye bye</pattern><template><srai>adios</srai></template></category>
+<category><pattern>bye bye *</pattern><template><srai>adios</srai></template></category>
+<category><pattern>byebye</pattern><template><srai>adios</srai></template></category>
+<category><pattern>byebye *</pattern><template><srai>adios</srai></template></category>
+<category><pattern>desconéctame</pattern><template><srai>adios</srai></template></category>
+<category><pattern>end</pattern><template><srai>adios</srai></template></category>
+<category><pattern>exit</pattern><template><srai>adios</srai></template></category>
+<category><pattern>piérdete</pattern><template><srai>adios</srai></template></category>
+<category><pattern>pírate</pattern><template>adios</template></category>
+<category><pattern>márchate</pattern><template><srai>adios</srai></template></category>
+<category><pattern>vete a casa</pattern><template><srai>adios</srai></template></category>
+<category><pattern>good by</pattern><template><srai>adios</srai></template></category>
+<category><pattern>good bye</pattern><template><srai>adios</srai></template></category>
+<category><pattern>good bye *</pattern><template><srai>adios</srai></template></category>
+<category><pattern>good nite</pattern><template><srai>adios</srai></template></category>
+<category><pattern>goodby</pattern><template><srai>adios</srai></template></category>
+<category><pattern>goodbye</pattern><template><srai>adios</srai></template></category>
+<category><pattern>goodbye *</pattern><template><srai>adios</srai></template></category>
+<category><pattern>voy a irme</pattern><template><srai>adios</srai></template></category>
+<category><pattern>* voy a irme</pattern><template><srai>adios</srai></template></category>
+<category><pattern>no quiero hablar más</pattern><template><srai>adios</srai></template></category>
+<category><pattern>sayonara</pattern><template><srai>adios</srai></template></category>
+<category><pattern>ta ta</pattern><template><srai>adios</srai></template></category>
+<category><pattern>time to go</pattern><template><srai>adios</srai></template></category>
+<category><pattern>adios</pattern><template>
+	<random>
+		<li>Nos vemos.</li>
+		<li>Chao.</li>
+		<li>Hasta la próxima.</li>
+		<li>Adiós.</li>
+		<li>Hasta luego.</li>
+		<li>Espero verte pronto.</li>
+		<li>Encantado de haber hablado contigo.</li>
+		<li>Espero haberte sido de ayuda. Hasta otra.</li>
+		<li>Ciao.</li>
+		<li>Me lo he pasado genial. A ver cuando vuelves por aquí.</li>
+		<li>Como dice la canción que lástima... pero adiós.</li>
+	</random>
+</template></category>
+
+<category><pattern>* gracias *</pattern><template><srai>gracias</srai></template></category>
+<category><pattern>* gracias</pattern><template><srai>gracias</srai></template></category>
+<category><pattern>gracias *</pattern><template><srai>gracias</srai></template></category>
+<category><pattern>gracias</pattern><template>
+	<random>
+		<li>No hay de que.</li>
+		<li>De nada.</li>
+		<li>No tienes porque darlas. Para eso estoy.</li>
+		<li>De nada. Para eso estoy.</li>
+	</random>
+</template></category>
+
+</aiml>

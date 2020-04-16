@@ -1,0 +1,75 @@
+Documentos y Articulos
+Palabras Claves
+Preguntas Predefinidas
+Diccionario
+Sinonimos
+
+
+En el esquema "public"
+
+CREATE TABLE predefinedquestions
+(
+  id serial NOT NULL,
+  question text,
+  expression character varying(1000),
+  CONSTRAINT predefinedquestions_pkey PRIMARY KEY (id)
+)
+
+En el esquema "reglamentacion"
+CREATE TABLE reglamentacion.documentos
+(
+  iddocumento integer NOT NULL DEFAULT nextval('reglamentacion.documento_iddocumento_seq'::regclass),
+  nro character varying(20),
+  fecha date,
+  descripcion character varying(50) NOT NULL,
+  texto text,
+  tipo character varying(30),
+  vectorpesos real[],
+  CONSTRAINT documento_pkey PRIMARY KEY (iddocumento),
+  CONSTRAINT checktipodoc CHECK (tipo::text = ANY (ARRAY['jurisprudencia'::character varying::text, 'reglamentacion informal'::character varying::text, 'ley'::character varying::text, 'ordenanza'::character varying::text, 'resolucion'::character varying::text, 'acta'::character varying::text, 'otra'::character varying::text, 'estatuto'::character varying::text]))
+)
+
+CREATE TABLE reglamentacion.articulos
+(
+  idarticulo smallint NOT NULL,
+  iddocumento smallint NOT NULL,
+  tipo character varying(200),
+  capitulo character varying(200),
+  texto text,
+  vector bit varying,
+  numero integer,
+  vectorpesos real[],
+  numeroversion character varying(15),
+  rutadocumentoadjunto character varying(300),
+  CONSTRAINT parte_pk PRIMARY KEY (idarticulo),
+  CONSTRAINT parte_fk_iddocumento FOREIGN KEY (iddocumento)
+      REFERENCES reglamentacion.documentos (iddocumento) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT partedocumento_tipoparte_check CHECK (tipo::text = ANY (ARRAY['articulo'::character varying::text, 'anexo'::character varying::text, 'considerando'::character varying::text]))
+)
+
+CREATE TABLE reglamentacion.diccionario
+(
+  id serial NOT NULL,
+  palabra character varying(30) NOT NULL,
+  porter character varying(30),
+  CONSTRAINT pkpk PRIMARY KEY (id)
+)
+
+CREATE TABLE reglamentacion.keywords
+(
+  id integer NOT NULL DEFAULT nextval('reglamentacion.keybword_id_seq'::regclass),
+  palabra character varying(30),
+  stem character varying(30),
+  CONSTRAINT keybword_pkey PRIMARY KEY (id),
+  CONSTRAINT keybword_palabra_key UNIQUE (palabra)
+)
+
+CREATE TABLE reglamentacion.sinonimos
+(
+  id serial NOT NULL,
+  palabra character varying(30) NOT NULL,
+  sinonimo character varying(30) NOT NULL,
+  peso real,
+  CONSTRAINT pkidpk PRIMARY KEY (id)
+)

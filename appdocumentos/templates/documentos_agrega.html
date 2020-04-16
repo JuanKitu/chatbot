@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block content %}
+<div>
+		<form method="post">
+			{% csrf_token %}
+			<div class = "row">
+				<div class="col-md-8 col-md-offset-2">
+					<div class="form-group">
+						<label>Numero</label>
+						<input class="form-control" type="text" name="nro">
+					</div>
+				</div>
+			</div>
+
+			<div class = "row">
+				<div class="col-md-8 col-md-offset-2">
+					<div class="form-group">
+						<label>Fecha</label>
+						<input class="form-control" type="text" name="fecha">
+					</div>
+				</div>
+			</div>
+
+			<div class = "row">
+				<div class="col-md-8 col-md-offset-2">
+					<div class="form-group">
+						<label>Descripcion</label>
+						<input class="form-control" type="text" name="descripcion">
+					</div>
+				</div>
+			</div>
+
+			<div class = "row">
+				<div class="col-md-8 col-md-offset-2">
+					<div class="form-group">
+						<label>Tipo</label>
+						<select class="form-control" name="tipo">
+							{% for value, text in form.fields.tipo.choices %}
+							<option value="{{ value }}">{{ text }}</option>
+							{% endfor %}
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div class = "row">
+				<div class="col-md-8 col-md-offset-2">
+					<div class="form-group">
+						<label>Texto</label>
+						<textarea class="form-control" name="texto" cols="40" rows="10"></textarea>
+					</div>
+				</div>
+			</div>
+
+			<div class = "row">
+				<div class="col-md-8 col-md-offset-2">
+					<div class="form-group">
+						<button class="btn btn-primary" type="submit">Guardar</button>
+					</div>
+				</div>
+			</div>
+		</form>
+</div>
+{%endblock%}

@@ -1,0 +1,1 @@
+dividir la informacion en un menu de paginas, utilizar un ciclo django for para controlar el mismo.

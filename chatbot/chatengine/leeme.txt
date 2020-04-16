@@ -1,0 +1,114 @@
+ALEXIA: Cerebro AIML en español
+-------------------------------
+  versión 1.5 14/02/2008
+-------------------------------
+     Proyecto GALAIA
+http://papa.det.uvigo.es/galaia
+
+
+*** Esta versión del Cerebro está optimizada para su uso con Program E ***
+
+
+NOTA IMPORTANTE:
+----------------
+
+Los cerebros de Alexia y Sabela, tras unas preguntas personales destinadas a conocer al usuario, están diseñados para hablar del Proyecto Galaia. Ésto se consigue con una recursión al fichero galaia.aiml, en el que está guardada la información del proyecto. Esta recursión se hace a través del fichero infoUsuario.aiml. En caso de querer personalizar los cerebros para otro proyecto, empresa, etc. simplemente es necesario hacer los dos siguientes cambios:
+
+ > En en fichero infoUsuario.aiml, dentro de la categoría askspecifictopic, reemplazar la recursión a <srai>galaiatopic</srai> por otra al tema deseado.
+
+ > Substituir el fichero galaia.aiml por otro acorde a las nuevas necesidades. 
+
+Es necesario indicar que para que el cerebro funcione coherentemente, hay que definir substituciones y separadores (splitters). Los que se ha definido son los siguientes:
+
+
+<!--Substitutions are grouped according to several AIML interpreter functions.-->
+<substitutions lang="es">
+  <input>
+    <substitute find="Á" replace="A"/>
+    <substitute find="É" replace="E"/>
+    <substitute find="Í" replace="I"/>
+    <substitute find="Ó" replace="O"/>
+    <substitute find="Ú" replace="U"/>
+    <substitute find="¿" replace=" "/>
+    <substitute find="!" replace=" "/>
+    <substitute find=":" replace=" "/>
+    <substitute find="," replace=" "/>
+  </input>
+  <gender>
+    <substitute find="la" replace="el"/>
+  </gender>
+  <person>
+    <substitute find=" Yo " replace=" El "/>
+  </person>
+  <person2>
+    <substitute find="yo" replace="tu"/>
+    <substitute find="tu" replace="yo"/>
+    <substitute find="eres" replace="soy"/>
+    <substitute find="soy" replace="eres"/>
+    <substitute find="estas" replace="estoy"/> <!-- Ojo!! Sin tilde -->
+    <substitute find="estoy" replace="estas"/>
+    <substitute find="irme" replace="irte"/>
+    <substitute find="irte" replace="irme"/>
+  </person2>
+</substitutions>
+
+
+<substitutions lang="gz">
+  <input>
+    <substitute find="Á" replace="A"/>
+    <substitute find="É" replace="E"/>
+    <substitute find="Í" replace="I"/>
+    <substitute find="Ó" replace="O"/>
+    <substitute find="Ú" replace="U"/>
+    <substitute find="¿" replace=" "/>
+    <substitute find="!" replace=" "/>
+    <substitute find=":" replace=" "/>
+    <substitute find="," replace=" "/>
+  </input>
+  <gender>
+    <substitute find="a" replace="o"/>
+  </gender>
+  <person>
+    <substitute find="eu" replace="el"/>
+  </person>
+  <person2>
+    <substitute find="eu" replace="ti"/>
+    <substitute find="ti" replace="eu"/>
+    <substitute find="es" replace="son"/>
+    <substitute find="son" replace="es"/>
+    <substitute find="estas" replace="estou"/> <!-- Ojo!! Sin tilde -->
+    <substitute find="estou" replace="estas"/>
+    <substitute find="irme" replace="irte"/>
+    <substitute find="irte" replace="irme"/>
+  </person2>
+</substitutions>
+
+<substitutions lang="en">
+  <input>
+    <substitute find=":" replace=" "/>
+    <substitute find="," replace=" "/>
+  </input>
+  <gender>
+    <substitute find="he" replace="she"/>
+    <substitute find="she" replace="he"/>
+    <substitute find="his" replace="her"/>
+  </gender>
+  <person>
+    <substitute find="I" replace="he"/>
+  </person>
+  <person2>
+    <substitute find="I" replace="you"/>
+    <substitute find="you" replace="I"/>
+    <substitute find="is" replace="am"/>
+    <substitute find="am" replace="is"/>
+  </person2>
+</substitutions>
+
+<!--Sentence splitters defined strings that mark the end of a sentence,
+             after input substitutions have been performed.-->
+<sentence-splitters>
+  <splitter value=";"/>
+  <splitter value="."/>
+  <splitter value="!"/>
+  <splitter value="?"/>
+</sentence-splitters>

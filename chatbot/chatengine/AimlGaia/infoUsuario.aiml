@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+  
+  <category><pattern>askquestion</pattern>
+    <template>
+      <random>
+        <li><srai>askquestion1</srai></li>
+        <li></li>
+      </random>
+    </template>
+  </category>
+  
+  <category><pattern>askquestion1</pattern>
+    <template>
+      <random>
+        <li><srai>newtopic</srai></li>
+        <li><srai></srai></li>
+        <li><srai></srai></li>
+      </random>
+      <random>
+        <li><srai>askpersonalquestion1</srai></li>
+        <li><srai>askpersonalquestion2</srai></li>
+        <li><srai>askpersonalquestion3</srai></li>
+        <li><srai>askpersonalquestion4</srai></li>
+        <li><srai>askpersonalquestion5</srai></li>
+      </random>
+    </template>
+  </category>
+  
+
+  <category><pattern>newtopic</pattern>
+    <template>
+      <random>
+        <li>Oye, una pregunta. </li>
+        <li>Déjame preguntarte algo. </li>
+        <li>Permíteme que te pregunte. </li>
+        <li>Hablando de todo un poco. </li>
+        <li>Cambiando de tema. </li>
+      </random>
+    </template>
+  </category>
+  
+
+  <category><pattern>askpersonalquestion1</pattern>
+    <template>
+      <condition>
+        <li name="name" value="">¿Cómo te llamas?</li>
+        <li name="gender" value="">¿Eres hombre o mujer?</li>
+        <li name="age" value="">¿Cuántos años tienes?</li> 
+        <li name="job" value="">¿En qué trabajas?</li> 
+        <li name="country" value="">¿De qué país eres?</li>
+        <li name="zodiac" value="">Cuál es tu signo del zodíaco?</li> 
+        <li name="birthday" value="">¿Qué día cumples años?</li>
+<!--        <li name="location" value="">¿Dónde vives?</li>
+        <li name="maritalstatus" value="">¿Estás casado?</li>
+        <li name="haircolor" value="">¿De qué color tienes el pelo?</li>
+        <li name="eyecolor" value="">¿De qué color tienes los ojos?</li>-->
+        <li><srai>askspecifictopic</srai></li>
+      </condition>
+    </template>
+  </category>
+
+ <category><pattern>askpersonalquestion2</pattern>
+    <template>
+      <condition>
+        <li name="name" value="">¿Cómo te llamas?</li>
+        <li name="age" value="">¿Cuántos años tienes?</li> 
+        <li name="birthday" value="">¿Qué día cumples años?</li>
+        <li name="job" value="">¿En qué trabajas?</li> 
+        <li name="gender" value="">¿Eres hombre o mujer?</li>
+        <li name="country" value="">¿De qué país eres?</li>
+        <li name="zodiac" value="">Cuál es tu signo del zodíaco?</li> 
+<!--        <li name="location" value="">¿Dónde vives?</li>-->
+<!--        <li name="maritalstatus" value="">¿Estás casado?</li>-->
+<!--        <li name="haircolor" value="">¿De qué color tienes el pelo?</li>-->
+<!--        <li name="eyecolor" value="">¿De qué color tienes los ojos?</li>-->
+        <li><srai>askspecifictopic</srai></li>
+      </condition>
+    </template>
+  </category>
+
+  <category><pattern>askpersonalquestion3</pattern>
+    <template>
+      <condition>
+        <li name="name" value="">¿Cómo te llamas?</li>
+        <li name="job" value="">¿En qué trabajas?</li> 
+        <li name="zodiac" value="">Cuál es tu signo del zodíaco?</li> 
+        <li name="gender" value="">¿Eres hombre o mujer?</li>
+        <li name="age" value="">¿Cuántos años tienes?</li> 
+        <li name="birthday" value="">¿Qué día cumples años?</li>
+        <li name="country" value="">¿De qué país eres?</li>
+<!--        <li name="location" value="">¿Dónde vives?</li>-->
+<!--        <li name="maritalstatus" value="">¿Estás casado?</li>-->
+<!--        <li name="haircolor" value="">¿De qué color tienes el pelo?</li>-->
+<!--        <li name="eyecolor" value="">¿De qué color tienes los ojos?</li>-->
+        <li><srai>askspecifictopic</srai></li>
+      </condition>
+    </template>
+  </category>
+
+  <category><pattern>askpersonalquestion4</pattern>
+    <template>
+      <condition>
+        <li name="name" value="">¿Cómo te llamas?</li>
+        <li name="gender" value="">¿Eres hombre o mujer?</li>
+<!--        <li name="maritalstatus" value="">¿Estás casado?</li>-->
+        <li name="age" value="">¿Cuántos años tienes?</li> 
+        <li name="birthday" value="">¿Qué día cumples años?</li>
+        <li name="country" value="">¿De qué país eres?</li>
+        <li name="job" value="">¿En qué trabajas?</li> 
+        <li name="zodiac" value="">Cuál es tu signo del zodíaco?</li> 
+<!--        <li name="eyecolor" value="">¿De qué color tienes los ojos?</li>
+        <li name="location" value="">¿Dónde vives?</li>
+        <li name="haircolor" value="">¿De qué color tienes el pelo?</li>-->
+        <li><srai>askspecifictopic</srai></li>
+      </condition>
+    </template>
+  </category>
+
+  <category><pattern>askpersonalquestion5</pattern>
+    <template>
+      <condition>
+        <li name="name" value="">¿Cómo te llamas?</li>
+<!--        <li name="location" value="">¿Dónde vives?</li>-->
+<!--        <li name="haircolor" value="">¿De qué color tienes el pelo?</li>-->
+        <li name="gender" value="">¿Eres hombre o mujer?</li>
+<!--        <li name="maritalstatus" value="">¿Estás casado?</li>-->
+        <li name="birthday" value="">¿Qué día cumples años?</li>
+        <li name="country" value="">¿De qué país eres?</li>
+        <li name="job" value="">¿En qué trabajas?</li> 
+        <li name="age" value="">¿Cuántos años tienes?</li> 
+        <li name="zodiac" value="">Cuál es tu signo del zodíaco?</li> 
+<!--        <li name="eyecolor" value="">¿De qué color tienes los ojos?</li>-->
+        <li><srai>askspecifictopic</srai></li>
+      </condition>
+    </template>
+  </category>
+
+  <!-- Substituir por el tema en concreto -->
+  <category><pattern>askspecifictopic</pattern>
+    <template><srai>galaiatopic</srai></template>
+  </category>
+  <!-- -->
+  
+  <category><pattern>BORRA MI INFORMACIÓN</pattern>
+    <template>De acuerdo.<think>
+        <set name="name"></set>
+        <set name="gender"></set>
+        <set name="age"></set> 
+        <set name="job"></set> 
+        <set name="country"></set>
+        <set name="zodiac"></set> 
+        <set name="birthday"></set>
+        <set name="location"></set>
+        <set name="maritalstatus"></set>
+        <set name="haircolor"></set>
+        <set name="eyecolor"></set>
+        <set name="topic"></set>
+        <set name="it"></set>
+        <set name="partner"></set>
+      </think>
+    </template>
+  </category>
+  <category><pattern>OLVÍDAME</pattern><template><srai>borra mi información</srai></template></category>
+  
+</aiml>

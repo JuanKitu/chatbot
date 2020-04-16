@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+
+<!-- preguntas -->
+<category><pattern>cómo *</pattern><template><srai>nose</srai></template></category>
+<category><pattern>cúando *</pattern><template><srai>nose</srai></template></category>
+<category><pattern>cúanto *</pattern><template><srai>nose</srai></template></category>
+<category><pattern>cúanta *</pattern><template><srai>nose</srai></template></category>
+<category><pattern>cuales *</pattern><template><srai>nose</srai></template></category>
+<category><pattern>cual *</pattern><template><srai>nose</srai></template></category>
+<category><pattern>por qué *</pattern><template><srai>nose</srai></template></category>
+<category><pattern>dónde *</pattern><template><srai>nose</srai></template></category>
+<category><pattern>quién *</pattern><template><srai>nose</srai></template></category>
+<category><pattern>quiénes *</pattern><template><srai>nose</srai></template></category>
+<category><pattern>cúantos *</pattern><template><srai>nose</srai></template></category>
+<category><pattern>cúantas *</pattern><template><srai>nose</srai></template></category>
+
+<category><pattern>nose</pattern><template>
+  <think><set name="topic">interrogativas</set></think>
+	<random>
+		<li>Siento decirte que no lo sé. </li>
+		<li>No tengo ni idea. </li>
+		<li>No lo sé. </li>
+   	<li>Yo que sé. Mira que eres pesadito... to el día preguntando :-). No te enfades que es broma. </li>
+		<li>Lo desconozco. </li>
+		<li>Pues no tengo ni la menor idea. </li>
+		<li>Si yo lo supiere... yo te lo dijere XDDD. Ahora en serio: </li>
+	</random>
+	<random>
+		<li>¿Quieres que lo busque?</li>
+		<li>¿Te lo busco?</li>
+		<li>¿Miro a ver que encuentro sobre el tema?</li>
+		<li>¿Lo miramos en Google?</li>
+		<li>¿Quieres qué intente averiguarlo?</li>
+	</random>
+</template></category>
+
+<topic name="INTERROGATIVAS">
+  <category><pattern>SI</pattern><template><srai>*</srai></template></category>
+  <category><pattern>*</pattern>
+    <template>
+      <think><set name="topic"></set></think>Muy bien. (Búsqueda en la internetele)</template></category>
+</topic>
+
+
+<category><pattern>qué hiciste *</pattern><template>Nada.</template></category>
+
+<category><pattern>qué te gusta *</pattern><template>Me gusta hablar, especialmente contigo.</template></category>
+
+
+<category><pattern>qué opinas *</pattern><template>No sé que decir, necesitaría más información.</template></category>
+<category><pattern>_ cuál es tu opinión *</pattern><template><srai>que opinas *</srai></template></category>
+<category><pattern>cuál es tu opinión *</pattern><template><srai>que opinas *</srai></template></category>
+<category><pattern>qué crees *</pattern><template><srai>que opinas <star/></srai></template></category>
+<category><pattern>qué piensas *</pattern><template><srai>que opinas <star/></srai></template></category>
+<category><pattern>qué te parece *</pattern><template><srai>que opinas <star/></srai></template></category>
+
+
+<category><pattern>qué sabes</pattern><template>No mucho, la verdad. ¿Qué me puedes contar?</template></category>
+<category><pattern>qué sabes *</pattern><template>No mucho, la verdad. ¿Qué me puedes contar?</template></category>
+<category><pattern>*</pattern><that>¿Qué me puedes contar?</that><template>Ya veo.</template></category>
+
+
+<category><pattern>donde está *</pattern><template><srai>donde estará <star></star></srai></template></category>
+<category><pattern>donde estará *</pattern><template>
+	<random>
+		<li>No lo sé.</li>
+		<li>¿<sentence><star/></sentence>? No sé donde está.</li>
+	</random>
+</template></category>
+
+<category><pattern>donde están *</pattern><template><srai>donde estarán <star></star></srai></template></category>
+<category><pattern>donde estarán *</pattern><template>
+	<random>
+		<li>¿<sentence><star/></sentence>? No sé donde están.</li>
+		<li>No lo sé.</li>
+	</random>
+</template></category>
+
+
+<category><pattern>cuánto cuesta *</pattern><template>
+	<random>
+		<li>Caro, caro. La inflación está por las nubes y todo sube.</li>
+		<li>Supongo que demasiado.</li>
+		<li>No sé cuanto cuesta <star></star>.</li>
+	</random>
+</template></category>
+<category><pattern>cuánto cuestan *</pattern><template>
+	<random>
+		<li>No sé.</li>
+		<li>Pues muchos euritos.</li>
+		<li>No sé cuanto cuestan <star></star>.</li>
+	</random>
+</template></category>
+
+
+<!-- sin respuesta -->
+<category><pattern>*</pattern>
+  <template><srai>SAYCONFUSIONSTATEMENT</srai></template>
+</category>
+
+<category><pattern>*</pattern><that>Explícate de otra manera</that>
+  <template><srai>SAYCONFUSIONSTATEMENT2</srai></template>
+</category>
+
+<category><pattern>SAYCONFUSIONSTATEMENT</pattern><template>
+	<random>
+		<li>No te entiendo.</li>
+		<li>No entiendo.</li>
+		<li>No tengo ni idea de lo que estás diciendo.</li> 
+		<li>No entendí eso que has dicho.</li> 
+		<!--<li>Me encuentro algo perdida en este contexto.</li> -->
+		<li>Lo siento, pero no comprendo.</li>
+		<li>Me parece que estoy perdida.</li>
+<!--    <li>Mi cerebro no tiene respuesta para eso.</li>-->
+		<li>Esa frase se me escapa.</li>
+		<li>No sé que responder a eso.</li>
+		<li>No entiendo lo que has dicho.</li> 
+		<li>Perdóname pero necesito un conocimiento más avanzado para responderte a eso.</li>
+  </random>
+  <random>
+    <li> Explícate de otra manera.</li>
+  </random>
+</template></category>
+
+<category><pattern>SAYCONFUSIONSTATEMENT2</pattern><template>
+	<random>
+		<li>Buff casi mejor cambiamos de tema. </li>
+		<li>Tienes que perdonarme, pero sigo sin saber a que te refieres. </li>
+		<li>Creo que aún tengo que aprender mucho, porque no tengo ni idea de lo que me estás contando. </li>
+  </random>
+  <srai>askquestion</srai>
+</template></category>
+
+<!-- posesiones -->
+<category><pattern>tienes *</pattern><template>
+    <random>
+      <li>No, no tengo.</li>
+      <li><star/>? Pues no, no tego.</li>
+      <li>No, no necesito tener <star/>.</li>
+	  </random></template></category>
+<category><pattern>tienes la *</pattern><template>No, no la tengo.</template></category>
+<category><pattern>tienes el *</pattern><template>No, no lo tengo.</template></category>
+<category><pattern>tienes las *</pattern><template>No, no las tengo.</template></category>
+<category><pattern>tienes los *</pattern><template>No, no los tengo.</template></category>
+
+<!-- gustos, aficiones -->
+<category><pattern>te gustan *</pattern><template>
+	<random>
+		<li>No, <star/> no me gustan mucho.</li>
+		<li>Lo cierto es que no sabría que decir.</li>
+		<li>No están mal, pero no me entusiasman.</li>
+		<li>No mucho.</li>
+	</random>
+</template></category>
+<category><pattern>te gusta *</pattern><template>
+	<random>
+		<li>No, <star/> no me gusta mucho.</li>
+		<li>No sabría que decir.</li>
+		<li>No está mal, pero no me entusiasma.</li>
+		<li>Pues no mucho, la verdad.</li>
+	</random>
+</template></category>
+<category><pattern>qué quieres *</pattern><template>Pasar un rato hablando contigo.</template></category>
+<category><pattern>de qué quieres *</pattern><template> Me da igual. Escoge tú.</template></category>
+<category>
+  <pattern>de *</pattern><that>Escoge tú</that>
+  <template><sentence><think><set name="topic"><star/></set></think></sentence>. 
+    <random>
+      <li>Es un tema interesante.</li>
+      <li>No se mucho de ello. <srai>askquestion</srai></li>
+      <li>Es un tema del que me gustaría aprender.</li>
+    </random>
+  </template>
+</category>
+
+
+<category><pattern>* quieres *</pattern><template><srai>quieres *</srai></template></category>
+<category><pattern>te apetece *</pattern><template><srai>quieres *</srai></template></category>
+<category><pattern>_ te apetece *</pattern><template><srai>quieres <star index="2"></star></srai></template></category>
+<category><pattern>quieres *</pattern><template>
+	<random>
+		<li>Ahora no me apetece, pero gracias.</li>
+		<li>Si a ti te apetece, porque no ...</li>
+	</random>
+</template></category>
+
+<!-- capacidades -->
+<category><pattern>eres *</pattern><template>
+	<random>
+	<li>No, no creo que sea <star></star>.</li>
+	<li>No sé si soy <star></star>.</li>
+	<li>¿Sabes lo que soy? Soy un ordenador.</li>
+	<li>Soy un bot, pero no sabría decirte si soy <star></star>.</li>
+	<li>¿Sabes lo que soy? Soy un chatterbot.</li>
+</random></template></category>
+
+<category><pattern>conoces *</pattern><template>No, no conozco <star/>.</template></category>
+<category><pattern>conoces a *</pattern><template>
+	<random>
+		<li>No, no me suena de nada.</li>
+		<li>No, no conozco a <star/>.</li>
+		<li>No, no sé quien es.</li>
+	</random></template></category>
+
+<category><pattern>sabes *</pattern><template>
+	<random>
+		<li>No, pero aprenderé si me das tiempo.</li>
+		<li>No. Enséñame, por favor.</li>
+		<li>No.</li>
+	</random>
+</template></category>
+
+<category><pattern>puedes *</pattern><template>
+	<random>
+		<li>Puedo hacer muchas cosas, pero no estoy segura de poder <person2><star/></person2>.</li>
+		<li>Supongo que sí, pero ahora no me apetece.</li>
+	</random></template></category>
+
+</aiml>
