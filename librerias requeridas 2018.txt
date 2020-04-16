@@ -9,7 +9,7 @@ Django==1.7.6
 GeoAlchemy2==0.4.0
 idna==2.0
 matplotlib==2.0.2
-nltk==3.0.2
+nltk==3.4.5
 numpy==1.12.1
 psycopg2==2.5.4
 PyAIML==0.8.6
