@@ -1,73 +1,74 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="row">
-	<div class="col-md-4">
+	<div class="col-md">
         <h3>Diccionario
-            <a class="btn btn-success" href="{% url 'diccionario:Diccionarioagregar' %}">Agregar</a>
+            <a class="btn btn-success btn-circle m-1" href="{% url 'diccionario:Diccionarioagregar' %}"><i class="fas fa-plus"></i></a>
         </h3>
     </div>
-    <div class="col-md-offset-8">
-        <h3><form method="GET" action="{% url 'diccionario:Diccionariolista' %}">
+    
+        <form class="form-inline" method="GET" action="{% url 'diccionario:Diccionariolista' %}">
+        	<div class="md-form my-0 justify-content-center">
             <input type="text" class="form-control" placeholder="Buscar" id="cuadroBusqueda" value="{{filtro}}" name="filtro">
-        </form></H3>
-    </div>
-
+        </div>
+        </form>
 </div>
 
 <div class="row">
-	<table class="table table-stripped table-hover">
-		<thead>
+	<table  class="table table-striped table-sm table-bordered table-responsive-sm">
+		<thead class="thead-dark">
 			<tr>
-				<th>ID</th>
-				<th>Palabra</th>
-				<th>Porter</th>
+				<th class="text-center">ID</th>
+				<th class="text-center">Palabra</th>
+				<th class="text-center">Porter</th>
+				<th class="text-center"></th>
 			</tr>
 		</thead>
 		<tbody>
 
 			{% for diccionario in object_list %}
 			<tr>
-				<td>{{ diccionario.id }}</td>
-				<td>{{ diccionario.palabra }}</td>
-				<td>{{ diccionario.porter }}</td>
-				<td>
-					<a class="btn btn-primary" href="{% url 'diccionario:Diccionarioeditar' pk=diccionario.id %}">Editar</a>
-				</td>
-				<td>
-					<a class="btn btn-danger" href="{% url 'diccionario:Diccionarioeliminar' pk=diccionario.id %}">Eliminar</a>
+				<td class="text-center">{{ diccionario.id }}</td>
+				<td class="text-center">{{ diccionario.palabra }}</td>
+				<td class="text-center">{{ diccionario.porter }}</td>
+				<td class="text-center tambutton">
+					<a class="btn btn-primary btn-circle m-1" href="{% url 'diccionario:Diccionarioeditar' pk=diccionario.id %}"><i class="fas fa-edit"></i></a>
+					<a class="btn btn-danger btn-circle m-1" href="{% url 'diccionario:Diccionarioeliminar' pk=diccionario.id %}"><i class="fas fa-trash-alt"></i></a>		
 				</td>
 			</tr>
 			{% endfor %}
 
 		</tbody>
 	</table>
+</div>
 
-	{% if is_paginated %}
-	
-	<ul class="pagination">
+{% if is_paginated %}
+	<nav>
+	<ul class="pagination pagination-circle justify-content-center pg-bluegrey ">
 
 		{% if page_obj.has_previous %}
-			<li><a href="?filtro={{ filtro }}&page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+			<li  class="page-item"><a class="page-link" href="?filtro={{ filtro }}&page={{ page_obj.previous_page_number }}">&laquo;</a></li>
 		{% else %}
-			<li class="disabled"><span>&laquo;</span></li>
+			<li class="page-item disabled"><span>&laquo;</span></li>
 		{% endif %}
 		{% for i in paginator.page_range %}
 		{% if page_obj.number == i %}
-			<li class="active"><span>{{ i }} <span class="sr-only">(actual)</span></span></li>
+			<li class="page-item active"><a class="page-link">{{ i }}</a></li>
 		{% else %}
-			<li><a href="?filtro={{ filtro }}&page={{ i }}">{{ i }}</a></li>
+		{% if forloop.counter < 7 %}
+			<li class="page-item"><a class="page-link" href="?filtro={{ filtro }}&page={{ i }}">{{ i }}</a></li>
+			{% endif %}
 		{% endif %}
 		{% endfor %}
 		{% if page_obj.has_next %}
-			<li><a href="?filtro={{ filtro }}&page={{ page_obj.next_page_number }}">&raquo;</a></li>
+			<li class="page-item"><a class="page-link" href="?filtro={{ filtro }}&page={{ page_obj.next_page_number }}">&raquo;</a></li>
 		{% else %}
-			<li class="disabled"><span>&raquo;</span></li>
+			<li class="page-item disabled"><span class="page-link">&raquo;</span></li>
 		{% endif %}
 
 	</ul>
+	</nav>
 	{% endif %}
-
-</div>
 
 
 <!---

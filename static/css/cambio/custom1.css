@@ -9,13 +9,12 @@ white-space: pre-wrap;      /* CSS3 */
    white-space: -pre-wrap;     /* Opera <7 */
    white-space: -o-pre-wrap;   /* Opera 7 */
    word-wrap: break-word;
-   overflow-y:scroll;
-   color:black;
+   overflow-y:scroll;  background:white;
    width: 100%;
    height: 80%;
    resize:vertical;
+   background:white;
    border:1px solid black;
-}
 }
 #chatwell{
    height: 50vh;

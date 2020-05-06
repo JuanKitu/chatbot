@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<div class="container-fluid">
+  <div id="layoutgeneral">
+    <div class="row-fluid">
+        <div class="col-sm-3 hidden-xs">
+            <div class="well wellborder " id="facewell"> <!-- Donde contiene la imagen de la operadora del chatbot -->
+
+                <img class="img-rounded "  src="{% static 'img/chicaOperadora.jpg' %}" height="100" width="100">
+            </div>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+                <div id="chatwell" class="well wellborder"> <!-- Toda la ventana del chat -->
+                    <div id="chatwindow"></div> <!-- Ventana de convrsacion del chat -->
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="input-group">
+                              <input id="message" type="text" class="form-control" placeholder="Que quieres preguntar?">
+                              <span class="input-group-btn">
+                                <button id="send" class="btn btn-primary" type="button">ok</button>
+                              </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="well" id="complex_answer" style="display:none">
+                    <div class="row-fluid">
+                        <div class="col-xs-6"> <h4 id="complex_answer_title"></h4></div>
+                         <div class="col-xs-6"><button id="close_complex" class="btn btn-default btn-primary">Cerrar</button></div>
+                    </div>
+
+                    <pre  id="complex_answer_content">
+
+                    </pre>
+                </div>
+        </div>
+    </div>
+</div>
+ </div>
+{% endblock %}

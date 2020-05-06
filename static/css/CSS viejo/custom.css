@@ -1,8 +1,46 @@
+body {
+	padding-top: 80px;
+	padding-left: 10%;
+	padding-right: 10%;
+}
+nav {
+	padding-left: 10%;
+	padding-right: 10%;
+}
+.navbar {
+	min-height: 50px;
+}
+.navbar-brand {
+	min-height: 50px;
+	font-weight: bolder;
+	font-stretch: condensed;
+}
 #layoutgeneral{
     margin-left: 5%;
     margin-right: 5%;
 }
-
+.logo {
+	max-height: 40px;
+	margin-top: -10px;
+	padding-right: 0px;
+}
+#facewell{
+background-color:#261a0d;
+vertical-align:baseline;
+margin-top:30%;
+}
+#chatwell
+{
+background-color:#261a0d; /* Negro*/
+}
+#message{
+background-color:#e5cdb3; /* amarillo */
+color:black;
+}
+#send{
+background-color:#714e28;
+border: 1px solid #714e28;
+}
 #chatwindow{
 white-space: pre-wrap;      /* CSS3 */
    white-space: -moz-pre-wrap; /* Firefox */
@@ -10,19 +48,17 @@ white-space: pre-wrap;      /* CSS3 */
    white-space: -o-pre-wrap;   /* Opera 7 */
    word-wrap: break-word;
    overflow-y:scroll;
+   background-color:#ebd9c6;/* Verde*/
    color:black;
    width: 100%;
    height: 80%;
    resize:vertical;
    border:1px solid black;
 }
-}
 #chatwell{
    height: 50vh;
 }
 
-#facewell{
-}
 
 #listas{
    overflow-y:scroll;background:white;
@@ -34,18 +70,6 @@ white-space: pre-wrap;      /* CSS3 */
    margin-left: 5%;
    margin-right: 5%;
    margin-inside: 5px;
-}
-
-#navlogo{
-    display: inline-block;
-    margin:10%;
-    color: #faebd7;
-    background-color: antiquewhite;
-}
-
-.wellborder{
-   border-color: rgb(94, 173, 173);
-   border-width: 2px;
 }
 #complex_answer{
 }
@@ -62,36 +86,6 @@ white-space: pre-wrap;      /* CSS3 */
 #close_complex{
    float:right;
 }
-
-#navbar{
-height:85px;
-}
-
-.navlink{
-  padding-top: 17px;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-@media (max-width: 768px){
-    .navbar-nav{
-        text-align: right;
-    }
-#navcollapse{
-  background-color: rgb(34, 34, 34);
-  margin-top: 34px;
-}
-}
-
-
-
-
-pre {
-   background-color: ghostwhite;
-   border: 1px solid silver;
-   padding: 10px 20px;
-   margin: 20px;
-   }
 .json-key {
    color: brown;
    }
@@ -101,3 +95,9 @@ pre {
 .json-string {
    color: olive;
    }
+
+   .header {
+  background: url(../img/bg-header.jpeg) no-repeat center;
+  background-size: cover;
+  min-height: 100vh;
+}
