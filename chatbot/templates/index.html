@@ -1,42 +1,41 @@
-{% extends 'base.html' %}
-{% block navbar %}
-{%endblock%}
-{% block content %}
-{% if not user.is_authenticated %}
+{% extends 'base.html' %} {% block navbar %} {%endblock%} {% block content %} {% if not user.is_authenticated %}
+
+
+
 <form method="post">
-	{% csrf_token %}
-	<div class="row">
-		<div class="col-md-6 col-md-offset-3">
-			<div class="form-group">
-				<label for="username">Nombre de Usuario:</label>
-				<input class="form-control" type="text" name="username">
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-6 col-md-offset-3">
-			<div class="form-group">
-				<label for="username">Contraseña:</label>
-				<input class="form-control" type="password" name="password">
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-6 col-md-offset-3">
-			<div class="form-group">
-				<input class="btn btn-primary" type="submit" value="Ingresar">
-				<a class="btn btn-danger" href="{% url 'usuarios:usuarioRegistrar' %}">Registrarse</a>
-				<a href="#">Olvide mi contraseña</a>
-			</div>
-		</div>
-	</div>
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="form-group">
+                <label for="username">Nombre de Usuario:</label>
+                <input class="form-control" type="text" name="username">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="form-group">
+                <label for="username">Contraseña:</label>
+                <input class="form-control" type="password" name="password">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="form-group">
+                <input class="btn btn-primary" type="submit" value="Ingresar">
+                <a class="btn btn-danger" href="{% url 'usuarios:usuarioRegistrar' %}">Registrarse</a>
+                <a href="#">Olvide mi contraseña</a>
+            </div>
+        </div>
+    </div>
 </form>
 {% else %}
 <h3 align="center">Usted ya inicio sesion como: <b>{{ user.get_username }}</b></h3>
 <h3 align="center">¿Desea terminar su sesion?</h3>
 <div align="center">
-<a class="btn btn-success" href="{% url 'logout' %}">Si</a><a class="btn btn-danger" href="{% url 'home' %}">No</a>
+    <a class="btn btn-success" href="{% url 'logout' %}">Si</a><a class="btn btn-danger" href="{% url 'home' %}">No</a>
 </div>
 
-{% endif %}
-{%endblock%}
+
+{% endif %} {%endblock%}
