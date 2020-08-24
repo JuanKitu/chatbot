@@ -71,37 +71,4 @@
 	{% endif %}
 
 
-<!---
-<script>
-	$(document).ready(function(){
-		$('#cuadroBusqueda').change(function(){
-			var textoBusqueda = $(this).val();
-			if (textoBusqueda != '') {
-				$('tbody tr').each(function(indice, fila){
-					// console.log(fila);
-					var encontrado = false;
-					$(fila).children().each(function(indiceCol){
-						// console.log($(this).text());
-						if ([1,2].indexOf(indiceCol) >= 0) {
-							if ($(this).text().includes(textoBusqueda) || encontrado) {
-								encontrado = true;
-								$(this).parent().show();
-							}
-							else {
-								$(this).parent().hide();
-							}
-						}
-					});
-				});
-			}
-			else {
-				$('tbody tr').each(function(indice, fila){
-					$(fila).show();
-				});
-			}
-		});
-	});
-</script>
--->
-
 {% endblock %}
